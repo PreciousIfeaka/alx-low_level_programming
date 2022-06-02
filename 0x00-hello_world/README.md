@@ -1,1 +1,1 @@
-prints a string
+prints a puts string
