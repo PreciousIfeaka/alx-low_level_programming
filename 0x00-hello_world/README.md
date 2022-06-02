@@ -1,1 +1,1 @@
-compiles but doesnt link
+outputs a code to an executable file
