@@ -1,1 +1,1 @@
-preprocesses a C file
+generates assembly code
