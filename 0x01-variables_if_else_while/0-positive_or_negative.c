@@ -2,11 +2,13 @@
 #include <time.h>
 #include <stdio.h>
 
-/** main-dtermines if a random number is negative, positive or zero.
+/**
+* main-dtermines if a random number is negative, positive or zero.
 * 
 * Return: always zero(success)
-int main(void)
 */
+
+int main(void)
 {
 int n;
 
