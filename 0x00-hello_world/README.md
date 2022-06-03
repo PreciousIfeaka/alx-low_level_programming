@@ -1,1 +1,1 @@
-prints a puts string
+prints printf string
