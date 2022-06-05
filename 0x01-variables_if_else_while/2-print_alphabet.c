@@ -15,4 +15,6 @@ putchar(alph);
 alph++;
 }
 putchar(n);
+
+return (0);
 }
