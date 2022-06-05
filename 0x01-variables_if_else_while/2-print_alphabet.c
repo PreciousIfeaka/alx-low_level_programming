@@ -5,7 +5,7 @@
 *
 * Return: Always 0 (Success)
 */
-char a, z;
+char alph(char a, char z);
 
 int main(void)
 {
@@ -15,7 +15,6 @@ while (alph <= z)
 putchar(alph);
 alph++;
 }
-putchar(n);
 
 return (0);
 }
