@@ -5,6 +5,7 @@
 *
 * Return: Always 0 (Success)
 */
+char a, z;
 
 int main(void)
 {
