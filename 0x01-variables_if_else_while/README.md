@@ -1,1 +1,1 @@
-ommits e and q from the alphabet
+prints all one digit decimals
