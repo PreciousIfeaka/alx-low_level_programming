@@ -1,1 +1,1 @@
-prints upper and lower case english alphabet
+ommits e and q from the alphabet
