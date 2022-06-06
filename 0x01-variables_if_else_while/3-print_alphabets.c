@@ -6,8 +6,10 @@
  */
 int main(void)
 {
+
 	char alph = 'a';
 	char alph1 = 'A';
+
 	while (alph <= 'z')
 	{
 		putchar(alph);
@@ -20,5 +22,5 @@ int main(void)
 		++alph1;
 	}
 	putchar('\n');
-	return (0);	
+	return (0);
 }
