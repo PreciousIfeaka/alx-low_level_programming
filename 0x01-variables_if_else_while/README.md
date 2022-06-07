@@ -1,1 +1,1 @@
-prints all one digit decimals
+prints one digit decimals as integers
