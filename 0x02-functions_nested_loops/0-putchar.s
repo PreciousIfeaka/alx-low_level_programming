@@ -36,26 +36,34 @@ main:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	movl	$95, %edi
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movabsq	$8241983569429622879, %rax
+	movq	%rax, -16(%rbp)
+	movl	$0, -20(%rbp)
+	jmp	.L4
+.L5:
+	movl	-20(%rbp), %eax
+	cltq
+	movzbl	-16(%rbp,%rax), %eax
+	movsbl	%al, %eax
+	movl	%eax, %edi
 	call	_putchar
-	movl	$112, %edi
-	call	_putchar
-	movl	$117, %edi
-	call	_putchar
-	movl	$116, %edi
-	call	_putchar
-	movl	$99, %edi
-	call	_putchar
-	movl	$104, %edi
-	call	_putchar
-	movl	$97, %edi
-	call	_putchar
-	movl	$114, %edi
-	call	_putchar
+	addl	$1, -20(%rbp)
+.L4:
+	cmpl	$8, -20(%rbp)
+	jle	.L5
 	movl	$10, %edi
 	call	_putchar
 	movl	$0, %eax
-	popq	%rbp
+	movq	-8(%rbp), %rdx
+	xorq	%fs:40, %rdx
+	je	.L7
+	call	__stack_chk_fail@PLT
+.L7:
+	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
