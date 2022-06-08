@@ -6,11 +6,15 @@
  * Return: Always 0 (success).
  */
 void print_alphabet(void);
-int _putchar(char c);
 int main(void)
 {
-	print_alphabet();
+	int alph;
 
+	for (alph = 97; alph <= 122; ++alph)
+	{
+		_putchar(alph);
+	}
+	_putchar('\n');
 	return (0);
 }
 

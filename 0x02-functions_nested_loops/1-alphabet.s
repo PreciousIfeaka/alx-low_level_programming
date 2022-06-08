@@ -68,9 +68,22 @@ main:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	call	print_alphabet
+	subq	$16, %rsp
+	movl	$97, -4(%rbp)
+	jmp	.L7
+.L8:
+	movl	-4(%rbp), %eax
+	movsbl	%al, %eax
+	movl	%eax, %edi
+	call	_putchar
+	addl	$1, -4(%rbp)
+.L7:
+	cmpl	$122, -4(%rbp)
+	jle	.L8
+	movl	$10, %edi
+	call	_putchar
 	movl	$0, %eax
-	popq	%rbp
+	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
