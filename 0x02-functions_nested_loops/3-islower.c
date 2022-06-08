@@ -10,8 +10,11 @@ int _islower(int c)
 	int alph;
 	int lower;
 
-	if (alph > 96 || alph < 123)
+	if (alph >= 97 && alph <= 122)
+	{
+		alph == c;
 		lower = 1;
+	}
 	else
 		lower = 0;
 
