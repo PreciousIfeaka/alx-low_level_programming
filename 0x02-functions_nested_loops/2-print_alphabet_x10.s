@@ -23,13 +23,12 @@ print_alphabet_x10:
 	movl	%eax, %edi
 	call	_putchar@PLT
 	addl	$1, -8(%rbp)
-	addl	$1, -8(%rbp)
 .L3:
 	cmpl	$122, -8(%rbp)
 	jle	.L4
-	addl	$1, -4(%rbp)
 	movl	$10, %edi
 	call	_putchar@PLT
+	addl	$1, -4(%rbp)
 .L2:
 	cmpl	$10, -4(%rbp)
 	jle	.L5

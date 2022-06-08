@@ -9,17 +9,14 @@
 void print_alphabet_x10(void)
 {
 	int alph;
-	int freq = 1;
+	int freq;
 
-	while (freq <= 10)
+	for (freq = 1; freq <= 10; ++freq)
 	{
 		for (alph = 97; alph <= 122; ++alph)
 		{
 			_putchar(alph);
-			++alph;
 		}
-
-		++freq;
 		_putchar('\n');
 	}
 }
