@@ -1,8 +1,8 @@
 	.file	"1-alphabet.c"
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	print_alphabet
+	.type	print_alphabet, @function
+print_alphabet:
 .LFB0:
 	.cfi_startproc
 	endbr64
@@ -25,13 +25,13 @@ main:
 	jle	.L3
 	movl	$10, %edi
 	call	_putchar@PLT
-	movl	$0, %eax
+	nop
 	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	main, .-main
+	.size	print_alphabet, .-print_alphabet
 	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
 	.section	.note.GNU-stack,"",@progbits
 	.section	.note.gnu.property,"a"

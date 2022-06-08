@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * main - prints the english alphabet using functions
- *
+ * print_alphabet - performs the description.
+ * Description:the function prints lower case.
  * Return: Always 0 (success).
  */
-void print_alphabet(void);
-int main(void)
+void print_alphabet(void)
 {
 	int alph;
 
@@ -15,7 +14,6 @@ int main(void)
 		_putchar(alph);
 	}
 	_putchar('\n');
-	return (0);
 }
 
 
