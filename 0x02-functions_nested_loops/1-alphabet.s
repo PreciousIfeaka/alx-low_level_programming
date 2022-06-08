@@ -1,8 +1,8 @@
 	.file	"1-alphabet.c"
 	.text
-	.globl	_putchar
-	.type	_putchar, @function
-_putchar:
+	.globl	main
+	.type	main, @function
+main:
 .LFB0:
 	.cfi_startproc
 	endbr64
@@ -12,82 +12,25 @@ _putchar:
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
 	subq	$16, %rsp
-	movl	%edi, %eax
-	movb	%al, -4(%rbp)
-	leaq	-4(%rbp), %rax
-	movl	$1, %edx
-	movq	%rax, %rsi
-	movl	$1, %edi
-	call	write@PLT
-	leave
-	.cfi_def_cfa 7, 8
-	ret
-	.cfi_endproc
-.LFE0:
-	.size	_putchar, .-_putchar
-	.globl	print_alphabet
-	.type	print_alphabet, @function
-print_alphabet:
-.LFB1:
-	.cfi_startproc
-	endbr64
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$16, %rsp
 	movl	$97, -4(%rbp)
-	jmp	.L4
-.L5:
+	jmp	.L2
+.L3:
 	movl	-4(%rbp), %eax
 	movsbl	%al, %eax
 	movl	%eax, %edi
-	call	_putchar
+	call	_putchar@PLT
 	addl	$1, -4(%rbp)
-.L4:
+.L2:
 	cmpl	$122, -4(%rbp)
-	jle	.L5
+	jle	.L3
 	movl	$10, %edi
-	call	_putchar
-	nop
-	leave
-	.cfi_def_cfa 7, 8
-	ret
-	.cfi_endproc
-.LFE1:
-	.size	print_alphabet, .-print_alphabet
-	.globl	main
-	.type	main, @function
-main:
-.LFB2:
-	.cfi_startproc
-	endbr64
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$16, %rsp
-	movl	$97, -4(%rbp)
-	jmp	.L7
-.L8:
-	movl	-4(%rbp), %eax
-	movsbl	%al, %eax
-	movl	%eax, %edi
-	call	_putchar
-	addl	$1, -4(%rbp)
-.L7:
-	cmpl	$122, -4(%rbp)
-	jle	.L8
-	movl	$10, %edi
-	call	_putchar
+	call	_putchar@PLT
 	movl	$0, %eax
 	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE2:
+.LFE0:
 	.size	main, .-main
 	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
 	.section	.note.GNU-stack,"",@progbits
