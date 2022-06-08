@@ -12,7 +12,8 @@ _isalpha:
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
 	movl	%edi, -20(%rbp)
-	movl	$65, -4(%rbp)
+	movl	-20(%rbp), %eax
+	movl	%eax, -4(%rbp)
 	cmpl	$64, -4(%rbp)
 	jle	.L2
 	cmpl	$90, -4(%rbp)
@@ -23,14 +24,11 @@ _isalpha:
 	cmpl	$122, -4(%rbp)
 	jg	.L4
 .L3:
-	movl	-4(%rbp), %eax
-	cmpl	-20(%rbp), %eax
-	jne	.L6
 	movl	$1, -8(%rbp)
-	jmp	.L6
+	jmp	.L5
 .L4:
 	movl	$0, -8(%rbp)
-.L6:
+.L5:
 	movl	-8(%rbp), %eax
 	popq	%rbp
 	.cfi_def_cfa 7, 8

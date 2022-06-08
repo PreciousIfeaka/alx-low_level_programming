@@ -8,13 +8,12 @@
 
 int _isalpha(int c)
 {
-	int alph = 65;
+	int alph = c;
 	int i;
 
-	if ((alph > 64 && alph < 91) || (alph > 96 && alph < 123))
+	if ((alph >= 65 && alph <= 90) || (alph >= 97 && alph <= 122))
 	{
-		if (alph == c)
-			i = 1;
+		i = 1;
 	}
 	else
 		i = 0;
