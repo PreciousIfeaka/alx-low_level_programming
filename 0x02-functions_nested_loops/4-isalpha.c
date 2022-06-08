@@ -13,8 +13,8 @@ int _isalpha(int c)
 
 	if ((alph > 64 && alph < 91) || (alph > 96 && alph < 123))
 	{
-		alph == c;
-		i = 1;
+		if (alph == c)
+			i = 1;
 	}
 	else
 		i = 0;
