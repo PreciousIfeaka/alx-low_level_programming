@@ -1,1 +1,1 @@
-prints lower case alphabet ten times
+checks if a letter is lower case
