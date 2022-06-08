@@ -13,22 +13,27 @@ print_alphabet_x10:
 	.cfi_def_cfa_register 6
 	subq	$16, %rsp
 	movl	$1, -4(%rbp)
-	movl	$97, -8(%rbp)
 	jmp	.L2
+.L5:
+	movl	$97, -8(%rbp)
+	jmp	.L3
 .L4:
 	movl	-8(%rbp), %eax
 	movsbl	%al, %eax
 	movl	%eax, %edi
 	call	_putchar@PLT
-.L3:
-	cmpl	$10, -4(%rbp)
-	jle	.L4
 	addl	$1, -8(%rbp)
-.L2:
+	addl	$1, -8(%rbp)
+.L3:
 	cmpl	$122, -8(%rbp)
-	jle	.L3
+	jle	.L4
+	addl	$1, -4(%rbp)
 	movl	$10, %edi
 	call	_putchar@PLT
+.L2:
+	cmpl	$10, -4(%rbp)
+	jle	.L5
+	nop
 	nop
 	leave
 	.cfi_def_cfa 7, 8

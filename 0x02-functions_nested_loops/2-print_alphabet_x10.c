@@ -11,8 +11,15 @@ void print_alphabet_x10(void)
 	int alph;
 	int freq = 1;
 
-	for (alph = 97; alph <= 122; ++alph)
-		while (freq <= 10)
+	while (freq <= 10)
+	{
+		for (alph = 97; alph <= 122; ++alph)
+		{
 			_putchar(alph);
-			_putchar('\n');
+			++alph;
+		}
+
+		++freq;
+		_putchar('\n');
+	}
 }
