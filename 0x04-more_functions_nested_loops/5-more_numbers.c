@@ -17,6 +17,7 @@ void more_numbers(void)
 			_putchar(n);
 		}
 		_putchar('\n');
+		++freq;
 	}
 	_putchar('\n');
 }

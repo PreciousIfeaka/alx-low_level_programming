@@ -28,6 +28,7 @@ more_numbers:
 	jle	.L4
 	movl	$10, %edi
 	call	_putchar@PLT
+	addl	$1, -4(%rbp)
 .L2:
 	cmpl	$10, -4(%rbp)
 	jle	.L5
