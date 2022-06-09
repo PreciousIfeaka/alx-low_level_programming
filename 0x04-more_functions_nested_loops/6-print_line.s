@@ -24,14 +24,10 @@ print_line:
 .L3:
 	movl	-4(%rbp), %eax
 	cmpl	-20(%rbp), %eax
-	jle	.L4
-	movl	$10, %edi
-	call	_putchar@PLT
-	jmp	.L6
+	jl	.L4
 .L2:
 	movl	$10, %edi
 	call	_putchar@PLT
-.L6:
 	nop
 	leave
 	.cfi_def_cfa 7, 8
