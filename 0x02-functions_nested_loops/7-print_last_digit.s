@@ -30,6 +30,7 @@ print_last_digit:
 	movl	%edx, %eax
 	movl	%eax, -4(%rbp)
 	movl	-4(%rbp), %eax
+	addl	$48, %eax
 	movsbl	%al, %eax
 	movl	%eax, %edi
 	call	_putchar@PLT
