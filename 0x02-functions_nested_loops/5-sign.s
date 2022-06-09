@@ -26,8 +26,9 @@ print_sign:
 	movl	$0, -8(%rbp)
 	movl	$48, %edi
 	call	_putchar@PLT
-	jmp	.L4
 .L3:
+	cmpl	$0, -4(%rbp)
+	jns	.L4
 	movl	$-1, -8(%rbp)
 	movl	$45, %edi
 	call	_putchar@PLT

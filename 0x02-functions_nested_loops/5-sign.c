@@ -21,7 +21,7 @@ int print_sign(int n)
 		i = 0;
 		_putchar(48);
 	}
-	else
+	if (num < 0)
 	{
 		i = -1;
 		_putchar(45);
