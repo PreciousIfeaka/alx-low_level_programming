@@ -1,1 +1,1 @@
-checks if a letter is lower case
+prints the sign of the input integer
