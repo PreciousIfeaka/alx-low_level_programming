@@ -7,3 +7,4 @@ prints 0 to 14 ten times
 prints given number of lines
 prints diagonal of given length
 prints square of given size
+prints FizzBuzz at designates positions
