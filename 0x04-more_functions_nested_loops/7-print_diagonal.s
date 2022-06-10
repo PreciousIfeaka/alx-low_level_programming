@@ -23,20 +23,20 @@ print_diagonal:
 .L5:
 	movl	$32, %edi
 	call	_putchar@PLT
-	addl	$1, -4(%rbp)
+	addl	$1, -8(%rbp)
 .L4:
 	movl	-4(%rbp), %eax
 	cmpl	-8(%rbp), %eax
 	jl	.L5
+	movl	$92, %edi
+	call	_putchar@PLT
+	movl	$10, %edi
+	call	_putchar@PLT
 	addl	$1, -8(%rbp)
 .L3:
 	movl	-8(%rbp), %eax
 	cmpl	-20(%rbp), %eax
 	jl	.L6
-	movl	$92, %edi
-	call	_putchar@PLT
-	movl	$10, %edi
-	call	_putchar@PLT
 	jmp	.L8
 .L2:
 	movl	$10, %edi
