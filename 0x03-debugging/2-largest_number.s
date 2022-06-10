@@ -16,30 +16,30 @@ largest_number:
 	movl	%edx, -28(%rbp)
 	movl	-20(%rbp), %eax
 	cmpl	-24(%rbp), %eax
-	jle	.L2
+	jl	.L2
 	movl	-20(%rbp), %eax
 	cmpl	-28(%rbp), %eax
-	jle	.L2
+	jl	.L2
 	movl	-20(%rbp), %eax
 	movl	%eax, -4(%rbp)
 	jmp	.L3
 .L2:
 	movl	-24(%rbp), %eax
 	cmpl	-20(%rbp), %eax
-	jle	.L4
+	jl	.L4
 	movl	-24(%rbp), %eax
 	cmpl	-28(%rbp), %eax
-	jle	.L4
+	jl	.L4
 	movl	-24(%rbp), %eax
 	movl	%eax, -4(%rbp)
 	jmp	.L3
 .L4:
 	movl	-28(%rbp), %eax
 	cmpl	-20(%rbp), %eax
-	jle	.L3
+	jl	.L3
 	movl	-28(%rbp), %eax
 	cmpl	-24(%rbp), %eax
-	jle	.L3
+	jl	.L3
 	movl	-28(%rbp), %eax
 	movl	%eax, -4(%rbp)
 .L3:
