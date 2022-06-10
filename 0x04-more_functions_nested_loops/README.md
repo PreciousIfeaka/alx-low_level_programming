@@ -8,3 +8,4 @@ prints given number of lines
 prints diagonal of given length
 prints square of given size
 prints FizzBuzz at designates positions
+Prints triangle of a given size
