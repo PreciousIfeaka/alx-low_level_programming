@@ -2,13 +2,15 @@
 	.text
 	.section	.rodata
 .LC0:
-	.string	"FizzBuzz"
+	.string	"FizzBuzz "
 .LC1:
-	.string	"Fizz"
+	.string	"Fizz "
 .LC2:
-	.string	"Buzz"
+	.string	"Buzz "
 .LC3:
-	.string	"%d"
+	.string	"%d "
+.LC4:
+	.string	"Buzz"
 	.text
 	.globl	main
 	.type	main, @function
@@ -116,10 +118,10 @@ main:
 .L4:
 	addl	$1, -4(%rbp)
 .L2:
-	cmpl	$100, -4(%rbp)
+	cmpl	$99, -4(%rbp)
 	jle	.L7
-	movl	$10, %edi
-	call	putchar@PLT
+	leaq	.LC4(%rip), %rdi
+	call	puts@PLT
 	movl	$0, %eax
 	leave
 	.cfi_def_cfa 7, 8
