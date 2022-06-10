@@ -23,7 +23,7 @@ print_diagonal:
 .L5:
 	movl	$32, %edi
 	call	_putchar@PLT
-	addl	$1, -8(%rbp)
+	addl	$1, -4(%rbp)
 .L4:
 	movl	-4(%rbp), %eax
 	cmpl	-8(%rbp), %eax
