@@ -5,3 +5,4 @@ prints 0 to 9
 prints numbers 0 to 9 except 2 and 4
 prints 0 to 14 ten times
 prints given number of lines
+prints diagonal of given length
