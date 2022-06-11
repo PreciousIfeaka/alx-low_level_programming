@@ -26,7 +26,7 @@ print_remaining_days:
 	movl	-12(%rbp), %eax
 	andl	$3, %eax
 	testl	%eax, %eax
-	jne	.L2
+	je	.L2
 	movl	-12(%rbp), %edx
 	movslq	%edx, %rax
 	imulq	$1374389535, %rax, %rax
@@ -41,7 +41,7 @@ print_remaining_days:
 	subl	%eax, %edx
 	movl	%edx, %eax
 	testl	%eax, %eax
-	je	.L3
+	jne	.L3
 	movl	-12(%rbp), %edx
 	movslq	%edx, %rax
 	imulq	$1374389535, %rax, %rax
@@ -56,11 +56,9 @@ print_remaining_days:
 	subl	%eax, %edx
 	movl	%edx, %eax
 	testl	%eax, %eax
-	je	.L2
-.L3:
+	je	.L3
+.L2:
 	cmpl	$1, -4(%rbp)
-	jle	.L4
-	cmpl	$59, -8(%rbp)
 	jle	.L4
 	addl	$1, -8(%rbp)
 .L4:
@@ -76,7 +74,7 @@ print_remaining_days:
 	movl	$0, %eax
 	call	printf@PLT
 	jmp	.L5
-.L2:
+.L3:
 	cmpl	$2, -4(%rbp)
 	jne	.L6
 	cmpl	$60, -8(%rbp)
