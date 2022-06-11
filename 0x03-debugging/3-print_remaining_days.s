@@ -27,12 +27,43 @@ print_remaining_days:
 	andl	$3, %eax
 	testl	%eax, %eax
 	jne	.L2
-	cmpl	$1, -4(%rbp)
-	jle	.L3
-	cmpl	$59, -8(%rbp)
-	jle	.L3
-	addl	$1, -8(%rbp)
+	movl	-12(%rbp), %edx
+	movslq	%edx, %rax
+	imulq	$1374389535, %rax, %rax
+	shrq	$32, %rax
+	movl	%eax, %ecx
+	sarl	$7, %ecx
+	movl	%edx, %eax
+	sarl	$31, %eax
+	subl	%eax, %ecx
+	movl	%ecx, %eax
+	imull	$400, %eax, %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	testl	%eax, %eax
+	je	.L3
+	movl	-12(%rbp), %edx
+	movslq	%edx, %rax
+	imulq	$1374389535, %rax, %rax
+	shrq	$32, %rax
+	movl	%eax, %ecx
+	sarl	$5, %ecx
+	movl	%edx, %eax
+	sarl	$31, %eax
+	subl	%eax, %ecx
+	movl	%ecx, %eax
+	imull	$100, %eax, %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	testl	%eax, %eax
+	je	.L2
 .L3:
+	cmpl	$1, -4(%rbp)
+	jle	.L4
+	cmpl	$59, -8(%rbp)
+	jle	.L4
+	addl	$1, -8(%rbp)
+.L4:
 	movl	-8(%rbp), %eax
 	movl	%eax, %esi
 	leaq	.LC0(%rip), %rdi
@@ -44,12 +75,12 @@ print_remaining_days:
 	leaq	.LC1(%rip), %rdi
 	movl	$0, %eax
 	call	printf@PLT
-	jmp	.L6
+	jmp	.L5
 .L2:
 	cmpl	$2, -4(%rbp)
-	jne	.L5
+	jne	.L6
 	cmpl	$60, -8(%rbp)
-	jne	.L5
+	jne	.L6
 	movl	-8(%rbp), %eax
 	leal	-31(%rax), %esi
 	movl	-12(%rbp), %edx
@@ -60,8 +91,8 @@ print_remaining_days:
 	leaq	.LC2(%rip), %rdi
 	movl	$0, %eax
 	call	printf@PLT
-	jmp	.L6
-.L5:
+	jmp	.L5
+.L6:
 	movl	-8(%rbp), %eax
 	movl	%eax, %esi
 	leaq	.LC0(%rip), %rdi
@@ -73,7 +104,8 @@ print_remaining_days:
 	leaq	.LC1(%rip), %rdi
 	movl	$0, %eax
 	call	printf@PLT
-.L6:
+	nop
+.L5:
 	nop
 	leave
 	.cfi_def_cfa 7, 8
