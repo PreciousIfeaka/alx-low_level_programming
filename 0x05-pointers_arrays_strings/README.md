@@ -5,3 +5,4 @@ prints a string to stdout
 prints the reverse of a string
 reverses a string
 prints character vertically
+prints the second half of a string
