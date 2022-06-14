@@ -11,33 +11,20 @@ swap_int:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	subq	$48, %rsp
-	movq	%rdi, -40(%rbp)
-	movq	%rsi, -48(%rbp)
-	movq	%fs:40, %rax
-	movq	%rax, -8(%rbp)
-	xorl	%eax, %eax
-	leaq	-20(%rbp), %rax
-	movq	%rax, -40(%rbp)
-	leaq	-16(%rbp), %rax
-	movq	%rax, -48(%rbp)
-	movq	-40(%rbp), %rax
+	movq	%rdi, -24(%rbp)
+	movq	%rsi, -32(%rbp)
+	movq	-24(%rbp), %rax
 	movl	(%rax), %eax
-	movl	%eax, -12(%rbp)
-	movq	-48(%rbp), %rax
+	movl	%eax, -4(%rbp)
+	movq	-32(%rbp), %rax
 	movl	(%rax), %edx
-	movq	-40(%rbp), %rax
+	movq	-24(%rbp), %rax
 	movl	%edx, (%rax)
-	movq	-48(%rbp), %rax
-	movl	-12(%rbp), %edx
+	movq	-32(%rbp), %rax
+	movl	-4(%rbp), %edx
 	movl	%edx, (%rax)
 	nop
-	movq	-8(%rbp), %rax
-	xorq	%fs:40, %rax
-	je	.L2
-	call	__stack_chk_fail@PLT
-.L2:
-	leave
+	popq	%rbp
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
