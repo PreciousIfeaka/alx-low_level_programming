@@ -16,9 +16,7 @@ _strlen:
 	jmp	.L2
 .L3:
 	addl	$1, -4(%rbp)
-	movq	-24(%rbp), %rax
-	addq	$1, %rax
-	movq	%rax, -24(%rbp)
+	addq	$1, -24(%rbp)
 .L2:
 	movq	-24(%rbp), %rax
 	movzbl	(%rax), %eax
