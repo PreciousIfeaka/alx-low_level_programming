@@ -4,3 +4,4 @@ determines the length of a string
 prints a string to stdout
 prints the reverse of a string
 reverses a string
+prints character vertically
