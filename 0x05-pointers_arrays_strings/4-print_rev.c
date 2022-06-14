@@ -1,20 +1,26 @@
 #include "main.h"
 
 /**
- * print_rev - a function that prints a string in the reverse order
- * @s: character pointer
- * Return: Nothing
+  * print_rev - prints string
+  * @s: input string
+  * Return: no return
  */
 
 void print_rev(char *s)
 {
-	int i = 0;
-	
-	while (i > 0)
+	int count = 0;
+
+	while (*s != '\0')
+	{
+		s++;
+		count++;
+	}
+
+	while (count > 0)
 	{
 		s--;
 		_putchar(*s);
-		i--;
+		count--;
 	}
 	_putchar('\n');
 }
