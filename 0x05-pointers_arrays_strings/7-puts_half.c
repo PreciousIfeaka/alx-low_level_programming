@@ -16,12 +16,17 @@ void puts_half(char *str)
 {
 	int n, length_of_string;
 	int i = 0;
+	int p = 0;
 
-	length_of_string = _strlen("*'str'");
-	if (length_of_string % 2 == 0)
-		n = length_of_string / 2;
+	while (*str != '\0')
+	{
+		p++;
+		str++;		
+	}
+	if (p % 2 == 0)
+		n = p / 2;
 	else
-		n = (length_of_string - 1) / 2;
+		n = (p - 1) / 2;
 	while (*str != '\0')
 	{
 		if (i >= n)
@@ -32,16 +37,4 @@ void puts_half(char *str)
 		}
 	}
 	_putchar('\n');
-}
-
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*s != '\0')
-	{
-		i++;
-		s++;
-	}
-	return (i);
 }
