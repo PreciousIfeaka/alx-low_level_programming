@@ -3,6 +3,8 @@
 /**
  * _strlen - a function that determines the length of a string
  * puts_half - a function that prints the second half of a string
+ * Description: The program creates a function
+ * that prints the second half of a string
  * @str: character pointer
  * @s: A character pointer also.
  * Return: Nothing
@@ -14,8 +16,7 @@ void puts_half(char *str)
 {
 	int n, length_of_string, i;
 
-	length_of_string = _strlen(str);
-	i = 1;
+	length_of_string = _strlen("*str");
 	if (length_of_string % 2 == 0)
 		n = length_of_string / 2;
 	else
