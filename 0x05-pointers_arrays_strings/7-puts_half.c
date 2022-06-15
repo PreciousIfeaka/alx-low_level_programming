@@ -1,40 +1,25 @@
 #include "main.h"
 
 /**
- * _strlen - a function that determines the length of a string
  * puts_half - a function that prints the second half of a string
  * Description: The program creates a function
- * that prints the second half of a string
  * @str: character pointer
- * @s: A character pointer also.
  * Return: Nothing
  */
 
-int _strlen(char *s);
-
 void puts_half(char *str)
 {
-	int n;
-	int i = 0;
-	int p = 0;
+	int n, i;
 
 	while (*str != '\0')
 	{
-		p++;
-		str++;		
-	}
-	if (p % 2 == 0)
-		n = p / 2;
-	else
-		n = (p - 1) / 2;
-	while (*str != '\0')
-	{
-		if (i >= n)
+		if (i % 2 == 0)
 		{
-			_putchar(*str);
-			str++;
-			i++;
+			n = i / 2;
 		}
+		else
+			n = (i - 1) / 2;
+		_putchar(str[n++]);
 	}
 	_putchar('\n');
 }
