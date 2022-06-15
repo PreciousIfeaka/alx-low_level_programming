@@ -14,7 +14,8 @@ int _strlen(char *s);
 
 void puts_half(char *str)
 {
-	int n, length_of_string, i;
+	int n, length_of_string;
+	int i = 0;
 
 	length_of_string = _strlen("*str");
 	if (length_of_string % 2 == 0)
