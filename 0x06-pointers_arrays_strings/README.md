@@ -5,3 +5,4 @@ compares two strings
 reveresed the elements of an array
 changes string to upper case
 capitalizes string
+encodes a string into 1337
