@@ -11,10 +11,10 @@ char *_strcat(char *dest, char *src)
 {
 	char *buff = dest;
 
-	while (*dest)
+	while (*dest != '\0')
 		dest++;
 
-	while (*src)
+	while (*src != '\0')
 		*dest++ = *src++;
 
 	*dest = '\0';
