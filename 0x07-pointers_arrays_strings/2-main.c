@@ -8,6 +8,14 @@ int main(void)
 
 	printf("%s\n", _strchr(brm, 'n'));
 }
-
-char *_strchr(char *s, char c)             {                                                  while (*s != '\0' && *s != c)                      s++;                               if (*s++ == c)                                     return (s);                        else                                               return ('\0');             	return (0);
+char *_strchr(char *s, char c)
+{
+        char *buff = s;
+        while (*s != '\0' && *s != c)
+                s++;
+        if (*s == c)
+                buff = s;
+        else
+                buff = '\0';
+        return (buff);
 }
