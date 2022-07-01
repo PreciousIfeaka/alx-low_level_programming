@@ -11,19 +11,19 @@
 
 char *create_array(unsigned int size, char c)
 {
-	char *buffer = NULL;
-	unsigned int i;
+	char *buffer;
+	unsigned int i = 0;
 
 	if (size <= 0)
 		return (NULL);
 	else if (size > 0)
 	{
-		buffer = (char *)malloc(sizeof(char) * size);
-		for (i = 0; i < size; i++)
+		buffer = malloc(sizeof(char) * size);
+		while (i < size)
 		{
 			buffer[i] = c;
+			i++;
 		}
 	}
 	return (buffer);
-	free(buffer);
 }
