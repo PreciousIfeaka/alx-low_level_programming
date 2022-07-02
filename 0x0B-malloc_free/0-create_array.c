@@ -24,6 +24,8 @@ char *create_array(unsigned int size, char c)
 			buffer[i] = c;
 			i++;
 		}
+		return (buffer);
 	}
-	return (buffer);
+	else
+		return (NULL);
 }
