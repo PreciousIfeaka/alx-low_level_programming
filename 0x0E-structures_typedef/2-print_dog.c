@@ -3,10 +3,10 @@
 #include <stddef.h>
 
 /**
- * print_dog - a function that prints struct dog
- * @d: the variable of type struct dog
+ * print_dog - function to print the variables allocated to dog
+ * @d: variable of type struct dog
  *
- * Return: pointer to dog
+ * Return: variable of type struct dog
  */
 
 void print_dog(struct dog *d)
@@ -22,7 +22,7 @@ void print_dog(struct dog *d)
 	else
 		printf("Age: %f\n", (*d).age);
 	if ((*d).owner == NULL)
-		printf("Owner: (nil)\n");
+		printf("Owner:(nil)\n");
 	else
 		printf("Owner: %s\n", (*d).owner);
 }
