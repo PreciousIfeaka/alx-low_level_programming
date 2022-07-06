@@ -7,7 +7,7 @@
  * @owner: dog's owner variable
  * @age: dog's age variable
  *
- * Return: Nothing
+ * Return: a pointer to the initialized variable
  */
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
@@ -15,4 +15,6 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	(*d).name = name;
 	(*d).owner = owner;
 	(*d).age = age;
+
+	return (d);
 }
