@@ -2,7 +2,6 @@
 
 /**
  * print_name - a function that prints name
- * based on instructions in other fxns
  * @f: a function pointer with void return type
  * @name: a pointer to name.
  *
