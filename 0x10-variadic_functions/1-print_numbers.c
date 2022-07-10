@@ -21,13 +21,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		num = va_arg(ap, unsigned int);
+		printf("%i", num);
 		if (i < (n - 1))
 		{
-			printf("%i", num);
 			printf("%s", separator);
 		}
-		else if (i == (n - 1) && separator != NULL)
-			printf("%i", num);
 	}
 	printf("\n");
 	va_end(ap);
