@@ -13,7 +13,7 @@ size_t list_len(const list_t *h)
 	const list_t *temp;
 	
 	temp = h;
-	while (temp != NULL)
+	while (temp)
 	{
 		temp = temp->next;
 		nubr++;
