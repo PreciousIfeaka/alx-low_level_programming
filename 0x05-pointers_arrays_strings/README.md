@@ -7,3 +7,4 @@ reverses a string
 prints character vertically
 prints the second half of a string
 prints elements of an array
+implements strcpy function
