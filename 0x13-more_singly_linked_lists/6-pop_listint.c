@@ -13,7 +13,7 @@ int pop_listint(listint_t **head)
 	int i; /* had to fix the node data in this to prevent seg fault */
 
 	h = *head;
-	if (head == NULL)
+	if (*head == NULL)
 		return (0);
 	*head = h->next;
 	i = h->n;
