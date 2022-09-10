@@ -10,19 +10,14 @@
 int pop_listint(listint_t **head)
 {
 	listint_t *h;
-	int i;
+	int i; /* had to fix the node data in this to prevent seg fault */
 
 	h = *head;
-	if (!head)
+	if (head == NULL)
 		return (0);
 	*head = h->next;
 	i = h->n;
 	free(h);
 
 	return (i);
-
-	/* I realized that it was important to fix
-	 * the node's data ina variable.
-	 * This has been giving me seg error since
-	 */
 }
