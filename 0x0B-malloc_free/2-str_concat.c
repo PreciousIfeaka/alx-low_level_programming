@@ -13,8 +13,10 @@ char *str_concat(char *s1, char *s2)
 	char *s;
 	int i, index1, index2;
 
-	if (!s1 || !s2)
-		return (NULL);
+	if (!s1)
+		s1 = "";
+	else if (!s2)
+		s2 = "";
 
 	i = strlen(s1) + strlen(s2);
 	s = malloc(sizeof(char) * (i + 1));
